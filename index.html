@@ -378,7 +378,6 @@
       </ul>
     </div>
 
-    <!-- Новий div контейнер для форми -->
     <div class="subscribe-container">
       <p class="subscribe-title">
         Subscribe
@@ -410,65 +409,89 @@
   </div>
 </footer>
 
-<div class="modal-backdrop">
-  <div class="modal-window">
+<div class="modal-backdrop" role="presentation">
+  <div
+    class="modal-window"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-describedby="modal-desc"
+  >
     <button class="modal-close-btn" type="button" aria-label="Close modal">
-      <svg class="modal-close-icon" width="8" height="8">
-        <use href="./images/icons.svg#close-icon"></use>
+      <svg class="modal-close-icon" width="8" height="8" aria-hidden="true" focusable="false">
+        <use href="./images/icons.svg#icon-cross"></use>
       </svg>
     </button>
-    <p class="modal-title">Leave your contacts and we will call you back</p>
-    <form class="modal-form">
 
-      <!-- Name -->
+    <p id="modal-title" class="modal-title">Leave your contacts and we will call you back</p>
+    <p id="modal-desc" class="visually-hidden">
+      Please fill in the form below with your contact details and submit.
+    </p>
+
+    <form class="modal-form" novalidate>
       <div class="form-group">
-        <label for="user-name" class="form-label">Name</label>
+        <label for="user-name" class="form-label">Name <span aria-hidden="true">*</span></label>
         <div class="input-wrapper">
           <input
             class="form-input"
             type="text"
             name="user-name"
             id="user-name"
+            required
+            aria-required="true"
+            aria-describedby="user-name-error"
+            autocomplete="name"
+            placeholder="Your name"
           />
-          <svg class="input-icon" width="18" height="24">
-            <use href="./images/icons.svg#user"></use>
+          <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
+            <use href="./images/icons.svg#icon-user"></use>
           </svg>
         </div>
+        <span id="user-name-error" class="error-message" aria-live="polite"></span>
       </div>
 
-      <!-- Phone -->
       <div class="form-group">
-        <label for="user-phone" class="form-label">Phone</label>
+        <label for="user-phone" class="form-label">Phone <span aria-hidden="true">*</span></label>
         <div class="input-wrapper">
           <input
             class="form-input"
             type="tel"
             name="user-phone"
             id="user-phone"
+            required
+            aria-required="true"
+            aria-describedby="user-phone-error"
+            autocomplete="tel"
+            pattern="^\+?[0-9\s\-()]{7,}$"
+            placeholder="+38 (___) ___-____"
           />
-          <svg class="input-icon" width="18" height="24">
+          <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
             <use href="./images/icons.svg#icon-phone-black"></use>
           </svg>
         </div>
+        <span id="user-phone-error" class="error-message" aria-live="polite"></span>
       </div>
-
-      <!-- Email -->
-      <div class="form-group">
-        <label for="user-email" class="form-label">Email</label>
+  <div class="form-group">
+        <label for="user-email" class="form-label">Email <span aria-hidden="true">*</span></label>
         <div class="input-wrapper">
           <input
             class="form-input"
             type="email"
             name="user-email"
             id="user-email"
+            required
+            aria-required="true"
+            aria-describedby="user-email-error"
+            autocomplete="email"
+            placeholder="example@mail.com"
           />
-          <svg class="input-icon" width="18" height="24">
+          <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
             <use href="./images/icons.svg#icon-email-black"></use>
           </svg>
         </div>
+        <span id="user-email-error" class="error-message" aria-live="polite"></span>
       </div>
 
-      <!-- Comment -->
       <div class="form-group">
         <label for="user-comment" class="form-label">Comment</label>
         <textarea
@@ -476,10 +499,12 @@
           name="user-comment"
           id="user-comment"
           placeholder="Text input"
+          rows="5"
+          aria-describedby="user-comment-desc"
         ></textarea>
+        <span id="user-comment-desc" class="visually-hidden">Optional comment field</span>
       </div>
 
-      <!-- Checkbox -->
       <div class="form-checkbox-group">
         <input
           class="form-checkbox"
@@ -487,18 +512,20 @@
           name="user-privacy"
           id="user-privacy"
           value="true"
+          required
+          aria-required="true"
+          aria-describedby="user-privacy-error"
         />
         <label for="user-privacy" class="form-checkbox-label">
           I accept the terms and conditions of the
-          <a class="form-privacy-link" href="#">Privacy Policy</a>
+          <a class="form-privacy-link" href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <span aria-hidden="true">*</span>
         </label>
       </div>
+      <span id="user-privacy-error" class="error-message" aria-live="polite"></span>
 
-      <!-- Submit -->
       <button class="form-submit-btn" type="submit">Send</button>
     </form>
-  </div>
-</div>
   </div>
 </div>
 </body>
