@@ -578,200 +578,190 @@ font-weight: 700;
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(46, 47, 66, 0.4);
+background-color: rgba(46, 47, 66, 0.4);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
 }
 
 .modal-window {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  width: 100%;
-  max-width: 408px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  background: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.14), 0 1px 3px rgba(0,0,0,0.12), 0 2px 1px rgba(0,0,0,0.2);
+  width: 408px;
+  padding: 72px 24px 24px 24px;
   position: relative;
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  border: none;
-  background-color: transparent;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0,0,0,0.1);
   cursor: pointer;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms, border 250ms;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: #404bbf;
+  border: none;
 }
 
 .modal-close-icon {
-  stroke: #2e2f42;
-  transition: stroke 250ms ease;
+  fill: #2e2f42;
+  transition: fill 250ms;
 }
 
 .modal-close-btn:hover .modal-close-icon,
 .modal-close-btn:focus .modal-close-icon {
-  stroke: #4d5ae5;
+  fill: #fff;
 }
 
 .modal-description {
-  margin-bottom: 16px;
-  color: #2e2f42;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   line-height: 1.5;
+  text-align: center;
   letter-spacing: 0.02em;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  color: #2e2f42;
+  margin-bottom: 16px;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  margin-bottom: 16px;
 }
 
 .form-label {
-  color: #8e8f99;
   font-size: 12px;
-  letter-spacing: 0.04em;
   line-height: 1.17;
-  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
 }
 
 .input-wrapper {
   position: relative;
 }
 
-.form-input,
-.form-textarea {
+.form-input {
   width: 100%;
-  padding: 11px 38px;
-  border-radius: 4px;
+  height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding-left: 38px;
   background-color: transparent;
-  font-size: 14px;
-  color: #2e2f42;
-  font-family: "Roboto", sans-serif;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus,
-.form-textarea:focus {
-  border-color: #4d5ae5;
+.form-input:focus {
+  border-color: #404bbf;
 }
 
 .input-icon {
   position: absolute;
-  top: 50%;
   left: 16px;
+  top: 50%;
   transform: translateY(-50%);
-  fill: #2e2f42;
+  fill: rgba(46, 47, 66, 0.4);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
-.form-input:focus + .input-icon,
-.input-wrapper:focus-within .input-icon {
-  fill: #4d5ae5;
+.form-input:focus + .input-icon {
+  fill: #404bbf;
 }
 
 .form-textarea {
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
   padding: 8px 16px;
   resize: none;
-  min-height: 120px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.form-textarea:focus {
+  border-color: #404bbf;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Додаткові стилі для чекбокса */
 
 .form-checkbox-label {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  font-family: "Roboto", sans-serif;
+  color: #2e2f42;
   cursor: pointer;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
-}
-
 .checkbox-box {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 16px;
   height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid #8e8f99;
   border-radius: 2px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-}
-
-input[type="checkbox"]:checked + .checkbox-box {
-  background-color: #404bbf;
-  border-color: #404bbf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
 
 .checkbox-icon {
-  fill: #fff;
-  opacity: 0;
-  transition: opacity 250ms ease;
+  fill: #404bbf;
+  display: none;
 }
 
 input[type="checkbox"]:checked + .checkbox-box .checkbox-icon {
-  opacity: 1;
+  display: block;
 }
 
 .form-privacy-link {
-  color: #4d5ae5;
+  color: #404bbf;
   text-decoration: underline;
 }
 
 .submit-button {
-  margin-top: 8px;
-  align-self: center;
-  padding: 16px 32px;
-  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  background-color: #404bbf;
   border: none;
-  background-color: #4d5ae5;
-  color: #fff;
+  border-radius: 4px;
+  color: white;
   font-weight: 500;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 0.04em;
-  line-height: 1.5;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms;
 }
 
 .submit-button:hover,
 .submit-button:focus {
-  background-color: #404bbf;
+  background-color: #2e2f42;
 }
 
-.error-message {
-  color: #d32f2f;
-  font-size: 12px;
-  line-height: 1.2;
-  min-height: 16px;
-  font-family: "Roboto", sans-serif;
-}
