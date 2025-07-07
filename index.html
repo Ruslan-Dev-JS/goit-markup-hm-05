@@ -406,87 +406,82 @@
         </button>
       </form>
     </div>
-  </div>
 </footer>
 
-<div class="modal-backdrop" role="presentation">
-  <div
-    class="modal-window"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-title"
-    aria-describedby="modal-desc"
-  >
-    <button class="modal-close-btn" type="button" aria-label="Close modal">
-      <svg class="modal-close-icon" width="8" height="8" aria-hidden="true" focusable="false">
-        <use href="./images/icons.svg#icon-cross"></use>
+<div class="modal-backdrop">
+  <div class="modal-window">
+    <button type="button" class="modal-close-btn" aria-label="Close modal">
+      <svg width="8" height="8" class="modal-close-icon" aria-hidden="true" focusable="false">
+        <use href="./images/icons.svg#icon-close"></use>
       </svg>
     </button>
-
-    <p id="modal-title" class="modal-title">Leave your contacts and we will call you back</p>
-    <p id="modal-desc" class="visually-hidden">
-      Please fill in the form below with your contact details and submit.
-    </p>
-
-    <form class="modal-form" novalidate>
+    <p class="modal-description">Leave your contacts and we will call you back</p>
+    <form>
       <div class="form-group">
-        <label for="user-name" class="form-label">Name <span aria-hidden="true">*</span></label>
+        <label for="user-name" class="form-label">
+          Name <span aria-hidden="true">*</span>
+        </label>
         <div class="input-wrapper">
           <input
-            class="form-input"
-            type="text"
-            name="user-name"
             id="user-name"
+            name="user-name"
+            type="text"
+            class="form-input"
             required
             aria-required="true"
-            aria-describedby="user-name-error"
             autocomplete="name"
+            aria-describedby="user-name-error"
             placeholder="Your name"
           />
           <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
-            <use href="./images/icons.svg#icon-user"></use>
+            <use href="./images/icons.svg#icon-name"></use>
           </svg>
         </div>
         <span id="user-name-error" class="error-message" aria-live="polite"></span>
       </div>
 
       <div class="form-group">
-        <label for="user-phone" class="form-label">Phone <span aria-hidden="true">*</span></label>
+        <label for="user-phone" class="form-label">
+          Phone <span aria-hidden="true">*</span>
+        </label>
         <div class="input-wrapper">
           <input
-            class="form-input"
-            type="tel"
-            name="user-phone"
             id="user-phone"
+            name="user-phone"
+            type="tel"
+            class="form-input"
             required
             aria-required="true"
-            aria-describedby="user-phone-error"
             autocomplete="tel"
             pattern="^\+?[0-9\s\-()]{7,}$"
+            aria-describedby="user-phone-error"
             placeholder="+38 (___) ___-____"
           />
           <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
-            <use href="./images/icons.svg#icon-phone-black"></use>
+            <use href="./images/icons.svg#icon-tel"></use>
           </svg>
         </div>
         <span id="user-phone-error" class="error-message" aria-live="polite"></span>
       </div>
-  <div class="form-group">
-        <label for="user-email" class="form-label">Email <span aria-hidden="true">*</span></label>
+
+      <div class="form-group">
+        <label for="user-email" class="form-label">
+          Email <span aria-hidden="true">*</span>
+        </label>
         <div class="input-wrapper">
           <input
-            class="form-input"
-            type="email"
-            name="user-email"
             id="user-email"
+            name="user-email"
+            type="email"
+            class="form-input"
             required
             aria-required="true"
-            aria-describedby="user-email-error"
             autocomplete="email"
+            aria-describedby="user-email-error"
             placeholder="example@mail.com"
           />
           <svg class="input-icon" width="18" height="24" aria-hidden="true" focusable="false">
-            <use href="./images/icons.svg#icon-email-black"></use>
+            <use href="./images/icons.svg#icon-mail"></use>
           </svg>
         </div>
         <span id="user-email-error" class="error-message" aria-live="polite"></span>
@@ -495,36 +490,41 @@
       <div class="form-group">
         <label for="user-comment" class="form-label">Comment</label>
         <textarea
-          class="form-textarea"
-          name="user-comment"
           id="user-comment"
+          name="user-comment"
+          class="form-textarea"
           placeholder="Text input"
-          rows="5"
+          rows="4"
           aria-describedby="user-comment-desc"
         ></textarea>
         <span id="user-comment-desc" class="visually-hidden">Optional comment field</span>
       </div>
 
+      <!-- Checkbox -->
       <div class="form-checkbox-group">
-        <input
-          class="form-checkbox"
-          type="checkbox"
-          name="user-privacy"
-          id="user-privacy"
-          value="true"
-          required
-          aria-required="true"
-          aria-describedby="user-privacy-error"
-        />
         <label for="user-privacy" class="form-checkbox-label">
+          <input
+            type="checkbox"
+            id="user-privacy"
+            name="user-privacy"
+            class="visually-hidden"
+            required
+          />
+          <span class="checkbox-box">
+            <svg class="checkbox-icon" width="10" height="8" aria-hidden="true" focusable="false">
+              <use href="./images/icons.svg#icon-tick"></use>
+            </svg>
+          </span>
           I accept the terms and conditions of the
-          <a class="form-privacy-link" href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          <span aria-hidden="true">*</span>
+          <a
+            href="#"
+            class="form-privacy-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Privacy Policy</a>
         </label>
       </div>
-      <span id="user-privacy-error" class="error-message" aria-live="polite"></span>
-
-      <button class="form-submit-btn" type="submit">Send</button>
+      <button type="submit" class="submit-button">Send</button>
     </form>
   </div>
 </div>
